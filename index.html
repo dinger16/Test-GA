@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Analytics Test</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'YOUR_TRACKING_ID');
+    </script>
+    <!-- End Google Analytics -->
+</head>
+<body>
+    <h1>Hello, world!</h1>
+    <button onclick="logCustomEvent()">Click Me!</button>
+    <script>
+        function logCustomEvent() {
+            gtag('event', 'button_click', {
+                'event_category': 'engagement',
+                'event_label': 'Hello Button',
+                'value': 1
+            });
+            alert('Custom event logged!');
+        }
+    </script>
+</body>
+</html>
